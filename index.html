@@ -1,305 +1,155 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>EduPeternakan - Portal Edukasi Peternakan Indonesia</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f9f6f1;
-    color: #4b3b2b;
-    line-height: 1.7;
-  }
-  a {
-    text-decoration: none;
-    color: #4b3b2b;
-  }
-  a:hover {
-    color: #2d6a4f;
-  }
-  header {
-    background: #7a6853;
-    padding: 30px 20px;
-    text-align: center;
-    color: #f3e9dc;
-    font-family: 'Playfair Display', serif;
-  }
-  header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.3rem;
-  }
-  header p {
-    font-size: 1.2rem;
-    font-style: italic;
-  }
-  nav {
-    background: #4b3b2b;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
-  nav a {
-    font-weight: 600;
-    font-size: 1.1rem;
-    position: relative;
-    padding-bottom: 5px;
-  }
-  nav a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #2d6a4f;
-    bottom: 0;
-    left: 0;
-    transition: 0.3s ease;
-  }
-  nav a:hover::after {
-    width: 100%;
-  }
-  main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  section {
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease, transform 1s ease;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    align-items: center;
-  }
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  section h2 {
-    font-family: 'Playfair Display', serif;
-    color: #2d6a4f;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #7a6853;
-    padding-bottom: 10px;
-    flex-basis: 100%;
-  }
-  section p, section ul, section article {
-    font-size: 1.15rem;
-    margin-bottom: 20px;
-    text-align: justify;
-    text-justify: inter-word;
-    flex: 1 1 60%;
-  }
-  ul {
-    list-style-type: square;
-    margin-left: 20px;
-  }
-  article h3 {
-    font-family: 'Playfair Display', serif;
-    color: #4b3b2b;
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
-  form label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 6px;
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1.8px solid #7a6853;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
-  }
-  textarea {
-    resize: vertical;
-  }
-  button {
-    background-color: #4b3b2b;
-    color: #f3e9dc;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #2d6a4f;
-  }
-  footer {
-    background-color: #4b3b2b;
-    color: #f3e9dc;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-  /* Image container */
-  .img-cartoon {
-    flex: 1 1 35%;
-    max-width: 300px;
-  }
-  .img-cartoon svg {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  /* Instagram */
-  .ig-handle {
-    margin-top: 20px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #2d6a4f;
-  }
-  /* Responsive */
-  @media (max-width: 800px) {
-    section {
-      flex-direction: column;
-      align-items: flex-start;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduPeternakan - Portal Edukasi Peternakan Indonesia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-    .img-cartoon {
-      max-width: 100%;
-      flex-basis: 100%;
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fcfaf6;
+      color: #333;
+      line-height: 1.6;
     }
-    section p, section ul, section article {
-      flex-basis: 100%;
+    header {
+      background-color: #5f462b;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
     }
-  }
-  @media (max-width: 600px) {
     header h1 {
-      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
     }
     nav {
-      flex-direction: column;
-      gap: 15px;
+      display: flex;
+      justify-content: center;
+      background-color: #3b2d20;
+      padding: 0.8rem;
+      gap: 1.5rem;
     }
-  }
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffde59;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2d6a4f;
+      border-bottom: 2px solid #c2b280;
+      padding-bottom: 0.5rem;
+    }
+    section p, section ul {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    ul {
+      list-style: square inside;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b4332;
+    }
+    footer {
+      background-color: #3b2d20;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>EduPeternakan</h1>
-  <p>Portal Edukasi Dunia Peternakan Indonesia yang Mendalam dan Profesional</p>
-</header>
-<nav>
-  <a href="#tentang">Tentang</a>
-  <a href="#jenis">Jenis Ternak</a>
-  <a href="#teknik">Teknik Pemeliharaan</a>
-  <a href="#artikel">Artikel</a>
-  <a href="#kontak">Kontak</a>
-</nav>
-<main>
-  <section id="tentang">
-    <h2>Tentang Peternakan</h2>
-    <div class="img-cartoon" aria-label="Gambar kartun peternak dengan sapi dan ayam">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <rect width="200" height="200" fill="#f3e9dc" rx="15" />
-        <!-- Peternak -->
-        <circle cx="60" cy="80" r="20" fill="#f2cfa9" />
-        <rect x="50" y="100" width="20" height="40" fill="#6a4a3c" rx="5"/>
-        <!-- Sapi -->
-        <ellipse cx="140" cy="110" rx="30" ry="20" fill="#6a4a3c" />
-        <circle cx="120" cy="100" r="7" fill="#fff" />
-        <circle cx="120" cy="100" r="3" fill="#000" />
-        <rect x="130" y="115" width="15" height="10" fill="#452c1a" rx="3"/>
-        <!-- Ayam -->
-        <circle cx="160" cy="70" r="10" fill="#f4a261" />
-        <polygon points="165,70 175,75 165,80" fill="#e76f51"/>
-      </svg>
-    </div>
-    <p>
-      Peternakan merupakan fondasi krusial dalam pembangunan ekonomi dan ketahanan pangan nasional Indonesia. Bidang ini tidak hanya berperan dalam menyediakan sumber protein hewani berkualitas, seperti daging, susu, dan telur, namun juga sebagai pilar utama yang menopang kesejahteraan masyarakat pedesaan dan pertumbuhan industri agro. Dalam praktiknya, peternakan melibatkan interaksi yang kompleks antara aspek biologi, manajemen sumber daya, teknologi pemeliharaan, dan pemasaran hasil ternak. EduPeternakan hadir untuk mengupas tuntas semua dimensi ini dengan pendekatan ilmiah dan praktis, memberikan wawasan yang mendalam serta solusi terbaik bagi para peternak maupun penggiat peternakan modern di seluruh nusantara.
-    </p>
-    <p>
-      Memahami prinsip dasar peternakan adalah kunci untuk menciptakan sistem yang berkelanjutan dan ramah lingkungan. Dengan perkembangan teknologi terbaru, seperti automasi dalam pemberian pakan, manajemen kesehatan ternak berbasis data, dan pengembangan pakan alternatif berbahan lokal, maka potensi peningkatan produktivitas dan efisiensi semakin terbuka lebar. EduPeternakan mengajak Anda untuk menelusuri segala aspek tersebut secara detail, agar dapat mengimplementasikan ilmu peternakan yang tidak hanya efektif, tapi juga berdampak positif secara sosial dan ekologis.
-    </p>
-  </section>
-  <section id="jenis">
-    <h2>Jenis-Jenis Ternak</h2>
-    <div class="img-cartoon" aria-label="Gambar kartun ayam, sapi, kambing, dan domba">
-      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <rect width="200" height="100" fill="#f3e9dc" rx="15" />
-        <!-- Ayam -->
-        <circle cx="30" cy="70" r="12" fill="#f4a261" />
-        <polygon points="35,70 45,75 35,80" fill="#e76f51"/>
-        <!-- Sapi -->
-        <ellipse cx="80" cy="60" rx="20" ry="15" fill="#6a4a3c" />
-        <circle cx="65" cy="55" r="5" fill="#fff" />
-        <circle cx="65" cy="55" r="2" fill="#000" />
-        <!-- Kambing -->
-        <ellipse cx="130" cy="60" rx="17" ry="12" fill="#b5651d" />
-        <polygon points="120,45 115,55 125,55" fill="#4b3b2b"/>
-        <!-- Domba -->
-        <ellipse cx="170" cy="65" rx="15" ry="10" fill="#d9d9d9" />
-        <circle cx="160" cy="60" r="4" fill="#4b3b2b" />
-      </svg>
-    </div>
-    <p>
-      Indonesia kaya akan keanekaragaman jenis ternak yang menjadi sumber penghidupan bagi jutaan peternak. Jenis-jenis ternak tersebut memiliki karakteristik, kebutuhan pemeliharaan, dan potensi pasar yang beragam. Berikut ini beberapa jenis ternak unggulan yang umum dipelihara di Indonesia, beserta uraian mendalam mengenai kelebihan dan tantangan masing-masing:
-    </p>
-    <ul>
-      <li>
-        <strong>Ayam</strong>: Sebagai salah satu ternak paling populer, ayam unggas menyediakan daging dan telur yang menjadi bagian penting dari pola konsumsi protein masyarakat. Pemeliharaan ayam dapat dilakukan secara tradisional maupun intensif, dengan pengelolaan yang tepat mampu meningkatkan hasil produksi sekaligus menjaga kesehatan ayam dari penyakit.
-      </li>
-      <li>
-        <strong>Sapi</strong>: Sapi potong dan sapi perah memiliki peran strategis dalam industri peternakan Indonesia. Sapi potong menyediakan daging yang bernilai ekonomis tinggi, sementara sapi perah menyediakan susu segar berkualitas. Pemeliharaan sapi memerlukan perhatian khusus terkait nutrisi, kesehatan, dan lingkungan kandang agar produktivitas optimal.
-      </li>
-      <li>
-        <strong>Kambing</strong>: Kambing dikenal dengan kemampuan adaptasinya yang tinggi terhadap berbagai kondisi lingkungan. Kambing juga memiliki nilai ekonomis baik sebagai sumber daging maupun produk sampingan seperti kulit dan susu kambing.
-      </li>
-      <li>
-        <strong>Domba</strong>: Domba lebih dikenal sebagai ternak penghasil daging dan bulu. Teknik pemeliharaan yang tepat akan memastikan kualitas dan kuantitas hasil produksi sesuai dengan standar pasar.
-      </li>
-    </ul>
-  </section>
-  <section id="teknik">
-    <h2>Teknik Pemeliharaan</h2>
-    <div class="img-cartoon" aria-label="Gambar kartun kandang dengan alat pemberi pakan otomatis">
-      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <rect width="200" height="140" fill="#f3e9dc" rx="15" />
-        <!-- Kandang -->
-        <rect x="30" y="50" width="140" height="70" fill="#a27c5a" rx="10" />
-        <rect x="45" y="70" width="30" height="40" fill="#6a4a3c" />
-        <rect x="125" y="70" width="30" height="40" fill="#6a4a3c" />
-        <!-- Alat Pakan Otomatis -->
-        <rect x="90" y="30" width="20" height="20" fill="#2d6a4f" rx="5" />
-        <circle cx="100" cy="40" r="7" fill="#4b3b2b" />
-      </svg>
-    </div>
-    <p>
-      Teknik pemeliharaan ternak adalah elemen kunci yang menentukan keberhasilan dalam beternak. Proses ini mencakup serangkaian praktik yang meliputi pemberian pakan yang seimbang dan bergizi, pengelolaan kandang yang higienis dan nyaman, serta penerapan protokol kesehatan yang ketat untuk mencegah dan mengendalikan penyakit.
-    </p>
-    <p>
-      Dalam era modern, penerapan teknologi seperti sistem pemberian pakan otomatis, pemantauan kesehatan ternak dengan sensor biometrik, dan penggunaan vaksinasi canggih menjadi semakin penting. Hal ini memungkinkan peternak meningkatkan efisiensi produksi sekaligus menjaga kesejahteraan ternak. EduPeternakan menjelaskan secara mendalam teknik-teknik ini dengan pendekatan ilmiah dan praktis, sehingga dapat diterapkan oleh peternak skala kecil maupun besar.
-    </p>
-  </section>
-  <section id="artikel">
-    <h2>Artikel Edukasi</h2>
-    <div class="img-cartoon" aria-label="Gambar kartun buku dan komputer edukasi">
-      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <rect width="200" height="140" fill="#f3e9dc" rx="15" />
-        <!-- Buku -->
-        <rect x="30" y="50" width="60" height="60" fill="#7a6853" rx="8" />
-        <line x1="40" y1="70" x2="80" y2="70" stroke="#f3e9dc" stroke-width="4" />
-        <line x1="40" y1="90" x2="80" y2="90" stroke="#f3e9dc" stroke-width="4" />
-        <!-- Komputer -->
-        <rect x="110
+  <header>
+    <h1>EduPeternakan</h1>
+    <p>Portal Edukasi Peternakan Indonesia yang Modern dan Informatif</p>
+  </header>
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#jenis">Jenis Ternak</a>
+    <a href="#teknik">Teknik</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+  <main>
+    <section id="tentang">
+      <h2>Tentang EduPeternakan</h2>
+      <p>EduPeternakan adalah portal edukatif yang menyajikan informasi mendalam seputar dunia peternakan di Indonesia. Kami hadir untuk mendukung peternak dan pelajar dalam mengakses ilmu terbaru, teknologi pemeliharaan, serta strategi bisnis peternakan yang berkelanjutan.</p>
+    </section><section id="jenis">
+  <h2>Jenis-Jenis Ternak</h2>
+  <ul>
+    <li><strong>Ayam:</strong> Produksi daging dan telur, cocok untuk peternakan skala rumah tangga hingga industri.</li>
+    <li><strong>Sapi:</strong> Sumber utama daging dan susu. Sapi potong dan sapi perah memiliki teknik pemeliharaan yang berbeda.</li>
+    <li><strong>Kambing & Domba:</strong> Unggul dalam adaptasi lingkungan dan produksi daging serta susu kambing.</li>
+  </ul>
+</section>
+
+<section id="teknik">
+  <h2>Teknik Pemeliharaan</h2>
+  <p>Pemeliharaan ternak mencakup pemberian pakan bergizi, kebersihan kandang, vaksinasi, serta penggunaan teknologi modern seperti sensor kesehatan dan mesin pemberi pakan otomatis.</p>
+</section>
+
+<section id="artikel">
+  <h2>Artikel Edukasi</h2>
+  <p>Baca berbagai artikel menarik seputar inovasi peternakan, studi kasus, hingga tips sukses beternak. Artikel diperbarui setiap minggu oleh tim ahli kami.</p>
+</section>
+
+<section id="kontak">
+  <h2>Hubungi Kami</h2>
+  <form>
+    <label for="nama">Nama</label>
+    <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Email Anda" required>
+
+    <label for="pesan">Pesan</label>
+    <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+
+    <button type="submit">Kirim</button>
+  </form>
+</section>
+
+  </main>
+  <footer>
+    &copy; 2025 EduPeternakan. Dikembangkan oleh M. Fichri Areef Habibullah | Instagram: <a href="https://instagram.com/givyooo_" style="color:#ffde59">@givyooo_</a>
+  </footer>
+</body>
+</html>
