@@ -5,123 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EduPeternakan - Portal Edukasi Peternakan Indonesia</title>
   <style>
-    /* Warna dan font nyaman di mata */
-    body {
+    /* Reset dasar */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f6f1; /* putih gading */
+      background-color: #fefaf5;
       color: #4a4a4a;
-      line-height: 1.6;
+      line-height: 1.7;
+      padding: 20px;
+      min-height: 100vh;
     }
     header {
-      background-color: #6b4c3b; /* coklat hangat */
-      color: #f9f6f1;
-      padding: 20px 40px;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: 700;
+      background-color: #7b4f24;
+      color: #fefaf5;
+      padding: 25px 40px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(123,79,36,0.3);
+    }
+    header h1 {
+      font-size: 2.8rem;
       letter-spacing: 2px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+      opacity: 0.85;
     }
     nav {
-      background-color: #8c6d56; /* coklat lebih muda */
+      margin-top: 25px;
       display: flex;
-      justify-content: center;
       gap: 30px;
-      padding: 15px 0;
       font-weight: 600;
-      font-size: 1.1rem;
     }
     nav a {
-      color: #f9f6f1;
       text-decoration: none;
-      transition: color 0.3s ease;
+      color: #fefaf5;
+      font-size: 1.1rem;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
     }
     nav a:hover {
-      color: #d1c4b2;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      color: #6b4c3b;
-      margin-top: 40px;
-      font-weight: 700;
-      border-bottom: 3px solid #8c6d56;
-      padding-bottom: 8px;
-    }
-    p {
-      margin-top: 15px;
-      text-align: justify;
-      font-size: 1.1rem;
-    }
-    footer {
-      background-color: #6b4c3b;
-      color: #f9f6f1;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 60px;
-      font-size: 0.9rem;
+      border-bottom: 2px solid #f4a261;
     }
     .contact-info {
-      text-align: center;
-      margin: 30px 0 10px 0;
-      font-weight: 600;
+      margin-top: 15px;
+      font-size: 1rem;
+      font-weight: 500;
     }
     .contact-info span {
-      margin-right: 15px;
+      margin-right: 25px;
+      color: #f4a261;
     }
-    /* Responsive */
-    @media (max-width: 600px) {
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #7b4f24;
+      margin-bottom: 20px;
+      border-left: 5px solid #f4a261;
+      padding-left: 15px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    section p {
+      text-align: justify;
+      font-size: 1.12rem;
+      margin-bottom: 20px;
+      text-indent: 40px;
+      color: #444;
+    }
+    ul {
+      margin-left: 40px;
+      margin-bottom: 25px;
+    }
+    ul li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.5;
+    }
+    ul li strong {
+      color: #7b4f24;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #7b4f24;
+      border-top: 1px solid #ccc;
+      user-select: none;
+    }
+    @media screen and (max-width: 600px) {
+      header, main {
+        padding: 20px;
+      }
       nav {
         flex-direction: column;
         gap: 15px;
-      }
-      main {
-        margin: 20px 10px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    EduPeternakan - Portal Edukasi Peternakan Indonesia
-  </header>
-  <nav>
-    <a href="#jenis-ternak">Jenis Ternak</a>
-    <a href="#teknik-pemeliharaan">Teknik Pemeliharaan</a>
-    <a href="#artikel">Artikel</a>
-  </nav>
-  <main>
-    <section class="contact-info">
+    <h1>EduPeternakan</h1>
+    <p>Portal Edukasi Dunia Peternakan Indonesia yang Mendalam dan Profesional</p>
+    <nav>
+      <a href="#jenis-ternak">Jenis Ternak</a>
+      <a href="#teknik-pemeliharaan">Teknik Pemeliharaan</a>
+      <a href="#artikel">Artikel Edukasi</a>
+    </nav>
+    <div class="contact-info">
       <span>WA: 0822-8018-6368</span>
-      <span>Instagram: <a href="https://www.instagram.com/givyooo" target="_blank" rel="noopener" style="color:#6b4c3b; text-decoration:none;">@givyooo</a></span>
-    </section>
+      <span>Instagram: <a href="https://www.instagram.com/givyooo" target="_blank" rel="noopener" style="color:#f4a261; text-decoration:none;">@givyooo</a></span>
+    </div>
+  </header>
 
+  <main>
     <section id="jenis-ternak">
       <h2>Jenis-Jenis Ternak Unggulan di Indonesia</h2>
       <p>
-        Indonesia memiliki beragam jenis ternak yang telah menjadi bagian tak terpisahkan dari kehidupan masyarakat pedesaan maupun perkotaan. Setiap jenis ternak memiliki karakteristik unik yang membawa manfaat ekonomi, sosial, dan ekologi. Contohnya, ayam yang merupakan sumber protein utama melalui daging dan telur, memiliki berbagai teknik pemeliharaan yang bisa diterapkan dari skala rumahan hingga industri. Sapi, baik sapi potong maupun sapi perah, tidak hanya memberikan sumber daging dan susu berkualitas, namun juga berperan dalam menjaga keseimbangan agroekosistem melalui pemanfaatan limbah dan rotasi lahan. Kambing dan domba juga tidak kalah penting, terutama dalam mendukung usaha kecil dan menengah serta menyediakan produk sampingan yang bernilai seperti susu kambing dan wol domba.
+        Keanekaragaman fauna ternak di Indonesia merupakan aset penting yang menunjang ketahanan pangan dan ekonomi masyarakat. Setiap jenis ternak membawa karakteristik, kebutuhan, serta manfaat yang unik. Memahami keunggulan dan tantangan masing-masing jenis ternak adalah kunci dalam mengoptimalkan usaha peternakan secara berkelanjutan dan efisien.
+      </p>
+      <ul>
+        <li><strong>Ayam:</strong> Ayam merupakan salah satu ternak unggulan yang sangat populer karena sumber daging dan telur yang bernilai gizi tinggi. Teknik pemeliharaan ayam modern mengedepankan aspek sanitasi, pemberian pakan berkualitas, dan pengendalian penyakit yang ketat demi hasil produksi yang optimal.</li>
+        <li><strong>Sapi:</strong> Sapi potong dan sapi perah memiliki peran strategis dalam industri peternakan nasional. Sapi potong menyuplai daging berprotein tinggi, sementara sapi perah menyediakan susu segar dan produk turunannya. Manajemen kandang dan nutrisi yang tepat sangat vital untuk menjaga kesehatan dan produktivitas sapi.</li>
+        <li><strong>Kambing:</strong> Kambing dikenal dengan kemampuan adaptasinya yang luar biasa terhadap berbagai kondisi lingkungan. Selain daging, kambing juga dimanfaatkan untuk susu dan kulit. Pemeliharaan kambing harus memperhatikan kualitas pakan dan pengendalian penyakit agar ternak tetap sehat dan produktif.</li>
+        <li><strong>Domba:</strong> Domba adalah ternak yang banyak dipelihara untuk daging serta bulu yang bernilai ekonomi. Teknik pemeliharaan yang baik menjamin kualitas hasil serta mempertahankan kesejahteraan hewan dalam proses produksinya.</li>
+      </ul>
+      <p>
+        Setiap jenis ternak tersebut memerlukan pendekatan berbeda dalam manajemen dan teknologi pemeliharaan agar dapat memberikan hasil terbaik sekaligus menjaga keberlanjutan lingkungan dan kesejahteraan hewan.
       </p>
     </section>
 
     <section id="teknik-pemeliharaan">
       <h2>Teknik Pemeliharaan Ternak Modern dan Berkelanjutan</h2>
       <p>
-        Pemeliharaan ternak merupakan seni dan ilmu yang memerlukan pendekatan holistik agar hasil yang didapatkan maksimal dan berkelanjutan. Aspek penting meliputi pemberian pakan yang tepat gizi dan berkualitas, manajemen kandang yang higienis dan nyaman untuk ternak, serta pengendalian penyakit dengan metode vaksinasi dan pemantauan kesehatan yang rutin. Inovasi teknologi seperti automasi pemberian pakan dan penggunaan sensor kesehatan ternak semakin memudahkan peternak dalam menjaga produktivitas dan kesejahteraan hewan. Dengan pendekatan ini, tidak hanya produktivitas yang meningkat, tetapi juga dampak lingkungan dapat diminimalisir, sejalan dengan tujuan pembangunan berkelanjutan.
+        Pemeliharaan ternak bukan sekadar memberikan makan dan tempat tinggal, tetapi sebuah ilmu yang melibatkan banyak aspek mulai dari kesehatan, nutrisi, perilaku, hingga lingkungan. Pada era digital, teknologi semakin memberikan kemudahan dalam manajemen peternakan melalui inovasi yang membantu meningkatkan efisiensi sekaligus menjaga kualitas hidup ternak.
+      </p>
+      <p>
+        Praktik pemeliharaan yang efektif mencakup penyediaan pakan bernutrisi lengkap dan seimbang, pengelolaan kandang yang higienis dan nyaman, serta pemantauan kesehatan ternak secara berkala. Teknologi sensor biometrik dan sistem otomatisasi pemberian pakan kini semakin banyak digunakan untuk meminimalkan kesalahan manusia dan mengoptimalkan hasil produksi.
+      </p>
+      <p>
+        EduPeternakan juga menekankan pentingnya penerapan sistem manajemen terpadu yang memperhatikan kesejahteraan ternak sekaligus dampak lingkungan, seperti pengelolaan limbah dan penggunaan pakan alternatif berbasis sumber daya lokal yang ramah lingkungan.
       </p>
     </section>
 
     <section id="artikel">
-      <h2>Artikel Edukasi: Tips Sukses Beternak Ayam</h2>
+      <h2>Artikel Edukasi: Panduan dan Tips Beternak</h2>
       <p>
-        Beternak ayam memerlukan pemahaman mendalam tentang siklus hidup, nutrisi, hingga pengendalian penyakit. Kunci suksesnya terletak pada kebersihan kandang, pemberian pakan yang seimbang, serta program vaksinasi yang tepat waktu. Kandang yang memiliki ventilasi baik akan mengurangi risiko stres dan penyakit. Pakan yang berkualitas tidak hanya mempercepat pertumbuhan tetapi juga meningkatkan daya tahan tubuh ayam sehingga hasil panen lebih optimal. EduPeternakan menyediakan panduan praktis dan ilmiah untuk membantu para peternak dari skala kecil hingga besar mencapai hasil terbaik.
+        Beternak dengan sukses memerlukan pengetahuan yang luas dan terus berkembang, karena peternakan adalah sebuah siklus hidup yang kompleks dan dinamis. Berikut adalah beberapa panduan utama yang kami sajikan untuk Anda yang ingin meningkatkan keterampilan dan hasil usaha peternakan.
+      </p>
+      <ul>
+        <li><strong>Tips Sukses Beternak Ayam:</strong> Kunci utama dalam memelihara ayam adalah menjaga kebersihan kandang, memberikan pakan bergizi lengkap, dan melakukan vaksinasi rutin. Ventilasi yang baik juga sangat penting untuk mencegah penyakit pernapasan. Dengan pengelolaan yang disiplin, produksi telur dan daging akan meningkat secara signifikan.</li>
+        <li><strong>Manfaat Pemberian Pakan Berkualitas:</strong> Pakan adalah sumber energi utama bagi ternak. Pakan yang baik akan meningkatkan imunitas, mempercepat pertumbuhan, serta meningkatkan mutu produk seperti daging, susu, dan telur. EduPeternakan membahas berbagai jenis pakan alternatif yang ekonomis dan ramah lingkungan.</li>
+      </ul>
+      <p>
+        Kami terus memperbarui artikel-artikel edukatif untuk mendukung kemajuan peternakan yang berkelanjutan dan berbasis ilmu pengetahuan.
       </p>
     </section>
   </main>
+
   <footer>
-    &copy; 2025 EduPeternakan. Semua hak cipta dilindungi.
+    &copy; 2025 EduPeternakan. Semua hak cipta dilindungi. Instagram: <a href="https://www.instagram.com/givyooo" target="_blank" rel="noopener" style="color:#7b4f24; text-decoration:none;">@givyooo</a>
   </footer>
 </body>
 </html>
