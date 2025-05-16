@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduPeternakan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #2e7d32;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        .ternak-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .ternak-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 45%;
+            padding: 15px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        .ternak-item img {
+            max-width: 100%;
+            border-radius: 6px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: 40px;
+        }
+        form {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        form button {
+            margin-top: 15px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        form button:hover {
+            background-color: #1b4d1b;
+        }
+        @media (max-width: 600px) {
+            .ternak-item {
+                width: 100%;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EduPeternakan</h1>
+        <p>Situs Edukasi Tentang Dunia Peternakan</p>
+    </header>
+    <nav>
+        <a href="#tentang">Tentang Peternakan</a>
+        <a href="#jenis">Jenis-Jenis Ternak</a>
+        <a href="#teknik">Teknik Pemeliharaan</a>
+        <a href="#artikel">Artikel Edukasi</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+    <main>
+        <section id="tentang">
+            <h2>Tentang Peternakan</h2>
+            <p>Peternakan adalah salah satu sektor penting dalam perekonomian yang berfokus pada pemeliharaan hewan untuk menghasilkan produk seperti daging, susu, telur, dan lain-lain. Peternakan juga membantu menyediakan bahan baku bagi industri serta mendukung ketahanan pangan.</p>
+        </section>
+
+        <section id="jenis">
+            <h2>Jenis-Jenis Ternak</h2>
+            <div class="ternak-list">
+                <div class="ternak-item">
+                    <h3>Ayam</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Chicken_-_melbourne_zoo.jpg" alt="Ayam" />
+                    <p>Ayam adalah ternak yang mudah dipelihara dan sumber protein penting. Cocok untuk pemula dalam peternakan.</p>
+                </div>
+                <div class="ternak-item">
+                    <h3>Sapi</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Indonesian_cattle.jpg" alt="Sapi" />
+                    <p>Sapi banyak dibudidayakan untuk daging dan susu. Perlu perhatian khusus dalam pemeliharaan dan pakan.</p>
+                </div>
+                <div class="ternak-item">
+                    <h3>Kambing</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Kambing_Etawa.jpg" alt="Kambing" />
+                    <p>Kambing mudah dipelihara dan menghasilkan daging serta susu. Baik untuk usaha ternak skala kecil.</p>
+                </div>
+                <div class="ternak-item">
+                    <h3>Domba</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Sheep_in_a_field_2009.jpg" alt="Domba" />
+                    <p>Domba terkenal dengan daging dan bulunya. Biasanya dipelihara di daerah dataran tinggi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="teknik">
+            <h2>Teknik Pemeliharaan</h2>
+            <ul>
+                <li><strong>Cara memberi makan:</strong> Berikan pakan bergizi dan sesuai jenis ternak.</li>
+                <li><strong>Perawatan kandang:</strong> Pastikan kandang bersih dan cukup ventilasi.</li>
+                <li><strong>Pencegahan penyakit:</strong> Lakukan vaksinasi dan cek kesehatan secara rutin.</li>
+            </ul>
+        </section>
+
+        <section id="artikel">
+            <h2>Artikel Edukasi</h2>
+            <article>
+                <h3>Tips Ternak untuk Pemula</h3>
+                <p>Mulailah dengan memilih jenis ternak yang mudah dipelihara dan pahami kebutuhan dasarnya. Pelajari cara pakan, perawatan, dan manajemen kandang dengan baik.</p>
+            </article>
+            <article>
+                <h3>Kiat Sukses Budidaya Ternak</h3>
+                <p>Konsistensi dalam perawatan, pemberian pakan berkualitas, serta pengelolaan kesehatan ternak adalah kunci keberhasilan.</p>
+            </article>
+        </section>
+
+        <section id="kontak">
+            <h2>Kontak</h2>
+            <form>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
+
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan kamu di sini..." required></textarea>
+
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 EduPeternakan - Semua hak cipta dilindungi.</p>
+    </footer>
+</body>
+</html>
