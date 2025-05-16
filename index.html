@@ -1,24 +1,23 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EduPeternakan - Portal Edukasi Peternakan Indonesia</title>
+  <title>EduPeternakan - Portal Edukasi Peternakan</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #fcfaf6;
+      background: #fffaf5;
       color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #5f462b;
+      background: #4b3b2b;
       color: #fff;
+      padding: 30px 20px;
       text-align: center;
-      padding: 2rem 1rem;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
@@ -27,80 +26,93 @@
     nav {
       display: flex;
       justify-content: center;
-      background-color: #3b2d20;
-      padding: 0.8rem;
-      gap: 1.5rem;
+      background: #2d6a4f;
+      padding: 12px 0;
+      gap: 25px;
     }
     nav a {
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      transition: color 0.3s;
     }
     nav a:hover {
-      color: #ffde59;
+      text-decoration: underline;
     }
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
     }
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 50px;
     }
     section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.8rem;
       color: #2d6a4f;
-      border-bottom: 2px solid #c2b280;
-      padding-bottom: 0.5rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      font-family: 'Playfair Display', serif;
     }
     section p, section ul {
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 15px;
       text-align: justify;
     }
     ul {
-      list-style: square inside;
+      list-style: square;
+      padding-left: 20px;
     }
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      background: #f3f3f3;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
     input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
     }
     button {
-      background-color: #2d6a4f;
-      color: white;
-      padding: 0.8rem 1.2rem;
+      background: #4b3b2b;
+      color: #fff;
       border: none;
-      border-radius: 5px;
-      font-size: 1rem;
+      padding: 10px 20px;
+      font-weight: bold;
       cursor: pointer;
+      border-radius: 4px;
     }
     button:hover {
-      background-color: #1b4332;
+      background: #2d6a4f;
     }
     footer {
-      background-color: #3b2d20;
-      color: white;
+      background: #4b3b2b;
+      color: #fff;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 15px;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>EduPeternakan</h1>
-    <p>Portal Edukasi Peternakan Indonesia yang Modern dan Informatif</p>
+    <p>Portal Edukasi Peternakan Indonesia</p>
   </header>
+
   <nav>
     <a href="#tentang">Tentang</a>
     <a href="#jenis">Jenis Ternak</a>
@@ -108,48 +120,58 @@
     <a href="#artikel">Artikel</a>
     <a href="#kontak">Kontak</a>
   </nav>
+
   <main>
     <section id="tentang">
       <h2>Tentang EduPeternakan</h2>
-      <p>EduPeternakan adalah portal edukatif yang menyajikan informasi mendalam seputar dunia peternakan di Indonesia. Kami hadir untuk mendukung peternak dan pelajar dalam mengakses ilmu terbaru, teknologi pemeliharaan, serta strategi bisnis peternakan yang berkelanjutan.</p>
-    </section><section id="jenis">
-  <h2>Jenis-Jenis Ternak</h2>
-  <ul>
-    <li><strong>Ayam:</strong> Produksi daging dan telur, cocok untuk peternakan skala rumah tangga hingga industri.</li>
-    <li><strong>Sapi:</strong> Sumber utama daging dan susu. Sapi potong dan sapi perah memiliki teknik pemeliharaan yang berbeda.</li>
-    <li><strong>Kambing & Domba:</strong> Unggul dalam adaptasi lingkungan dan produksi daging serta susu kambing.</li>
-  </ul>
-</section>
+      <p>
+        EduPeternakan adalah platform edukatif yang menyajikan informasi lengkap tentang dunia peternakan di Indonesia. Kami hadir untuk membantu peternak dan mahasiswa memahami teknik, teknologi, dan strategi dalam memelihara ternak secara berkelanjutan dan profesional.
+      </p>
+    </section>
 
-<section id="teknik">
-  <h2>Teknik Pemeliharaan</h2>
-  <p>Pemeliharaan ternak mencakup pemberian pakan bergizi, kebersihan kandang, vaksinasi, serta penggunaan teknologi modern seperti sensor kesehatan dan mesin pemberi pakan otomatis.</p>
-</section>
+    <section id="jenis">
+      <h2>Jenis-Jenis Ternak</h2>
+      <ul>
+        <li><strong>Ayam:</strong> Cocok untuk skala rumahan maupun komersial, menghasilkan daging dan telur.</li>
+        <li><strong>Sapi:</strong> Sumber daging dan susu berkualitas tinggi, memerlukan manajemen intensif.</li>
+        <li><strong>Kambing:</strong> Mudah dipelihara, adaptif terhadap lingkungan, hasilkan daging & susu.</li>
+        <li><strong>Domba:</strong> Penghasil daging dan bulu, cocok di daerah dataran tinggi.</li>
+      </ul>
+    </section>
 
-<section id="artikel">
-  <h2>Artikel Edukasi</h2>
-  <p>Baca berbagai artikel menarik seputar inovasi peternakan, studi kasus, hingga tips sukses beternak. Artikel diperbarui setiap minggu oleh tim ahli kami.</p>
-</section>
+    <section id="teknik">
+      <h2>Teknik Pemeliharaan</h2>
+      <p>
+        Teknik pemeliharaan meliputi pemberian pakan seimbang, sanitasi kandang, serta vaksinasi dan pengawasan kesehatan rutin. Teknologi modern seperti feeder otomatis dan sensor kesehatan ternak kini mulai diadopsi untuk meningkatkan efisiensi.
+      </p>
+    </section>
 
-<section id="kontak">
-  <h2>Hubungi Kami</h2>
-  <form>
-    <label for="nama">Nama</label>
-    <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+    <section id="artikel">
+      <h2>Artikel Edukasi</h2>
+      <p>
+        Temukan berbagai artikel menarik tentang manajemen peternakan, inovasi pakan, strategi pemasaran ternak, dan studi kasus dari peternak sukses di seluruh Indonesia.
+      </p>
+    </section>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Email Anda" required>
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <form>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Masukkan nama Anda">
 
-    <label for="pesan">Pesan</label>
-    <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Masukkan email Anda">
 
-    <button type="submit">Kirim</button>
-  </form>
-</section>
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" rows="5" placeholder="Tulis pesan atau pertanyaan Anda di sini"></textarea>
 
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
   </main>
+
   <footer>
-    &copy; 2025 EduPeternakan. Dikembangkan oleh M. Fichri Areef Habibullah | Instagram: <a href="https://instagram.com/givyooo_" style="color:#ffde59">@givyooo_</a>
+    &copy; 2025 EduPeternakan | IG: <a href="https://instagram.com/givyooo_" target="_blank" style="color: #aad;">@givyooo_</a> | Dibuat oleh M. Fichri Areef Habibullah
   </footer>
 </body>
 </html>
