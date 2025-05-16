@@ -5,157 +5,217 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EduPeternakan - Portal Edukasi Peternakan Indonesia</title>
 <style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
   body {
+    margin: 0; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background: #f7f1e1;
+    color: #4b3a2a;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  a {
+    color: #805c2f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #a87c3a;
   }
   header {
-    background-color: #2c6e49;
-    color: #fff;
-    padding: 25px 20px;
+    background-color: #6b4c2b;
+    padding: 20px 30px;
+    color: #f3e8d7;
     text-align: center;
-    font-size: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  }
+  header h1 {
+    margin: 0;
     font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
   }
   nav {
-    display: flex;
-    justify-content: center;
-    background-color: #3d8c5a;
-    gap: 24px;
-    padding: 14px 0;
+    margin-top: 12px;
   }
   nav a {
-    color: #e3f0df;
-    text-decoration: none;
+    margin: 0 15px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: color 0.3s;
-  }
-  nav a:hover {
-    color: #b0d8a2;
   }
   main {
-    max-width: 960px;
-    margin: 28px auto;
-    padding: 0 20px;
+    max-width: 980px;
+    margin: 40px auto 80px;
+    background: #fff9f0;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgb(107 76 43 / 0.25);
   }
   h2 {
-    color: #2c6e49;
-    font-weight: 700;
-    margin-bottom: 14px;
-    border-bottom: 3px solid #3d8c5a;
+    color: #6b4c2b;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    border-bottom: 3px solid #a87c3a;
     padding-bottom: 6px;
   }
-  section {
-    margin-bottom: 42px;
-    line-height: 1.6;
+  h3 {
+    color: #805c2f;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    font-size: 1.5rem;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 20px;
   }
   ul {
-    list-style-type: disc;
-    padding-left: 1.4rem;
+    margin-left: 20px;
+    margin-bottom: 30px;
   }
   ul li {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
-  .image-row {
+  .images {
     display: flex;
-    gap: 24px;
-    margin: 22px 0;
     justify-content: center;
+    gap: 60px;
+    margin: 40px 0;
+    flex-wrap: wrap;
   }
-  .image-row img {
-    max-width: 180px;
+  .images img {
+    width: 180px;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(107,76,43,0.3);
+    background: #f3e8d7;
   }
   footer {
-    background-color: #2c6e49;
-    color: #e3f0df;
+    background-color: #6b4c2b;
+    color: #f3e8d7;
+    padding: 24px 30px;
     text-align: center;
-    padding: 18px 12px;
     font-size: 0.9rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
   }
   footer a {
-    color: #b0d8a2;
-    text-decoration: none;
+    color: #d9b675;
     font-weight: 600;
   }
-  footer a:hover {
-    text-decoration: underline;
+  .contact-info {
+    background: #f9f3e7;
+    border: 1.5px solid #a87c3a;
+    padding: 20px 25px;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 12px rgb(168 124 58 / 0.35);
+  }
+  .contact-info strong {
+    color: #6b4c2b;
   }
   @media (max-width: 600px) {
-    nav {
-      flex-direction: column;
-      gap: 12px;
+    main {
+      padding: 20px 24px;
+      margin: 30px 15px 60px;
     }
-    .image-row {
-      flex-direction: column;
-      gap: 14px;
+    .images {
+      gap: 30px;
     }
-    .image-row img {
-      max-width: 100%;
+    .images img {
+      width: 140px;
+    }
+    nav a {
+      margin: 0 8px;
+      font-size: 1rem;
     }
   }
 </style>
 </head>
 <body>
-<header>EduPeternakan - Portal Edukasi Peternakan Indonesia</header>
-<nav>
-  <a href="#tentang">Tentang</a>
-  <a href="#jenis-ternak">Jenis Ternak</a>
-  <a href="#teknik-pemeliharaan">Teknik Pemeliharaan</a>
-  <a href="#artikel">Artikel</a>
-  <a href="#kontak">Kontak</a>
-</nav>
+
+<header>
+  <h1>EduPeternakan</h1>
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#jenis-ternak">Jenis Ternak</a>
+    <a href="#teknik-pemeliharaan">Teknik Pemeliharaan</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
+
 <main>
   <section id="tentang">
     <h2>Tentang Peternakan</h2>
-    <p>Peternakan adalah sektor vital yang berkontribusi besar terhadap pembangunan ekonomi dan ketahanan pangan nasional Indonesia. Melalui penyediaan sumber protein hewani berkualitas, seperti daging, susu, dan telur, peternakan juga menjadi pilar penting dalam meningkatkan kesejahteraan masyarakat pedesaan dan mendorong pertumbuhan industri agro. Dalam praktiknya, peternakan melibatkan berbagai aspek mulai dari biologi, manajemen sumber daya, teknologi pemeliharaan, hingga pemasaran hasil ternak yang harus dikelola secara cermat dan berkelanjutan. EduPeternakan hadir untuk memberikan informasi komprehensif dan solusi praktis yang dapat mendukung pengembangan peternakan modern yang efisien, ramah lingkungan, dan berdampak positif bagi seluruh nusantara.</p>
-    <p>Memahami prinsip dasar peternakan sangat penting untuk menciptakan sistem yang berkelanjutan dan adaptif terhadap perubahan teknologi serta kondisi lingkungan. Dengan hadirnya teknologi terbaru seperti automasi pemberian pakan, sistem pemantauan kesehatan ternak berbasis data, serta pengembangan pakan alternatif yang berbahan lokal, peternak dapat meningkatkan produktivitas dan efisiensi secara signifikan. EduPeternakan mengajak Anda menyelami setiap aspek ini secara mendalam sehingga ilmu yang diperoleh tidak hanya bersifat teoritis, tapi dapat diaplikasikan langsung untuk meningkatkan hasil dan kesejahteraan ternak secara menyeluruh.</p>
+    <p>
+      Peternakan merupakan pilar utama dalam pembangunan ekonomi dan ketahanan pangan nasional Indonesia. Sektor ini tidak hanya menjadi sumber protein hewani yang esensial seperti daging, susu, dan telur, tetapi juga berperan besar dalam menopang kehidupan masyarakat pedesaan serta mendorong pertumbuhan industri agro yang berkelanjutan. Dengan interaksi kompleks antara ilmu biologi, manajemen sumber daya, teknologi pemeliharaan, serta strategi pemasaran, peternakan menjadi bidang yang memerlukan pemahaman mendalam dan pengelolaan yang tepat agar dapat memberikan manfaat optimal bagi seluruh lapisan masyarakat.
+    </p>
+    <p>
+      EduPeternakan hadir sebagai portal edukasi yang mengupas berbagai aspek penting dalam dunia peternakan dengan pendekatan ilmiah sekaligus praktis. Melalui pemahaman yang mendalam terhadap prinsip-prinsip dasar dan perkembangan teknologi terbaru, seperti automasi pemberian pakan, pemantauan kesehatan berbasis data, dan inovasi pakan lokal alternatif, portal ini menyediakan wawasan yang luas untuk mewujudkan sistem peternakan yang efisien, ramah lingkungan, dan berkelanjutan. EduPeternakan mengajak Anda untuk menyelami dunia peternakan modern yang tidak hanya menguntungkan secara ekonomi, namun juga membawa dampak positif sosial dan ekologi.
+    </p>
   </section>
+
   <section id="jenis-ternak">
     <h2>Jenis-Jenis Ternak</h2>
-    <p>Indonesia memiliki keanekaragaman jenis ternak yang sangat kaya dan menjadi sumber penghidupan bagi jutaan peternak di berbagai daerah. Setiap jenis ternak memiliki karakteristik, kebutuhan pemeliharaan, serta potensi pasar yang berbeda-beda, sehingga pengetahuan mendalam tentang masing-masing jenis sangat penting untuk mengoptimalkan hasil usaha peternakan. Berikut adalah beberapa jenis ternak unggulan yang umum dibudidayakan di Indonesia:</p>
+    <p>
+      Indonesia dikenal dengan kekayaan keanekaragaman jenis ternaknya yang memberikan berbagai peluang bagi jutaan peternak di seluruh nusantara. Setiap jenis ternak memiliki karakteristik unik, kebutuhan pemeliharaan khusus, serta potensi pasar yang berbeda-beda, sehingga memerlukan teknik budidaya yang sesuai untuk mencapai hasil optimal. Berikut adalah beberapa jenis ternak unggulan yang paling banyak dibudidayakan beserta penjelasan lengkap mengenai kelebihan dan tantangan dalam pemeliharaannya:
+    </p>
     <ul>
-      <li><strong>Ayam</strong>: Ternak ayam merupakan salah satu yang paling populer di Indonesia. Selain menyediakan daging yang lezat, ayam juga menghasilkan telur yang menjadi salah satu sumber protein utama masyarakat. Pemeliharaan ayam bisa dilakukan secara tradisional hingga intensif dengan teknologi yang berkembang, sehingga bisa meningkatkan hasil produksi sekaligus menjaga kesehatan ayam agar tetap prima.</li>
-      <li><strong>Sapi</strong>: Baik sapi potong maupun sapi perah memiliki peran strategis dalam peternakan Indonesia. Sapi potong adalah sumber daging bernilai ekonomi tinggi, sementara sapi perah menyediakan susu segar yang banyak dikonsumsi masyarakat. Pengelolaan nutrisi, kesehatan, dan lingkungan kandang yang baik menjadi kunci keberhasilan dalam memelihara sapi secara optimal.</li>
-      <li><strong>Kambing</strong>: Dikenal sebagai ternak yang mudah beradaptasi dengan berbagai lingkungan, kambing juga memiliki nilai ekonomis tinggi baik sebagai sumber daging maupun produk lain seperti kulit dan susu kambing. Teknik pemeliharaan yang tepat dapat memaksimalkan potensi kambing dalam berbagai kondisi.</li>
-      <li><strong>Domba</strong>: Domba banyak dipelihara untuk diambil daging dan bulunya. Pemeliharaan dengan standar yang baik akan memastikan kualitas dan kuantitas hasil produksi memenuhi kebutuhan pasar, serta meningkatkan nilai jual produk domba.</li>
+      <li><strong>Ayam:</strong> Ayam merupakan ternak unggas yang paling populer dan menjadi sumber utama daging serta telur dalam konsumsi masyarakat Indonesia. Sistem pemeliharaan ayam dapat dilakukan secara tradisional maupun intensif. Dengan pengelolaan pakan dan kesehatan yang baik, produksi dapat ditingkatkan sekaligus menjaga kualitas ayam agar tetap sehat dan bebas penyakit.</li>
+      <li><strong>Sapi:</strong> Ternak sapi terbagi menjadi sapi potong dan sapi perah, masing-masing memegang peranan penting dalam sektor peternakan. Sapi potong menyediakan daging yang bernilai tinggi, sedangkan sapi perah menghasilkan susu segar bernutrisi. Pemeliharaan sapi membutuhkan perhatian khusus terhadap nutrisi yang seimbang, kondisi kandang yang ideal, dan manajemen kesehatan untuk memastikan produktivitas maksimal.</li>
+      <li><strong>Kambing:</strong> Kambing dikenal dengan kemampuan adaptasinya yang tinggi pada berbagai kondisi lingkungan. Selain sebagai sumber daging, kambing juga menghasilkan produk sampingan yang bernilai seperti susu kambing dan kulit. Perawatan kambing yang tepat dapat meningkatkan kualitas dan kuantitas hasil produksi yang berpotensi besar di pasar lokal maupun nasional.</li>
+      <li><strong>Domba:</strong> Domba merupakan ternak penghasil daging dan bulu yang memiliki nilai ekonomis penting. Teknik pemeliharaan yang benar akan membantu menjaga kualitas daging dan bulu sesuai standar pasar, sekaligus menjaga kesehatan ternak dari ancaman penyakit yang umum terjadi.</li>
     </ul>
-    <div class="image-row">
-      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Kartun sapi" />
-      <img src="https://cdn-icons-png.flaticon.com/512/616/616491.png" alt="Kartun ayam" />
+
+    <div class="images">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Kartun Sapi" loading="lazy" />
+      <img src="https://cdn-icons-png.flaticon.com/512/616/6164081.png" alt="Kartun Ayam" loading="lazy" />
     </div>
   </section>
+
   <section id="teknik-pemeliharaan">
     <h2>Teknik Pemeliharaan</h2>
-    <p>Teknik pemeliharaan ternak merupakan faktor utama yang menentukan keberhasilan usaha peternakan. Berbagai praktik yang meliputi pemberian pakan bergizi seimbang, pengelolaan kandang yang bersih dan nyaman, serta penerapan protokol kesehatan ketat sangat penting untuk menjaga kesehatan dan produktivitas ternak. Dengan kemajuan teknologi, saat ini banyak metode modern yang dapat diterapkan seperti sistem pemberian pakan otomatis, sensor biometrik untuk pemantauan kesehatan, serta vaksinasi yang lebih efektif dan efisien.</p>
-    <p>EduPeternakan menghadirkan penjelasan lengkap mengenai teknik pemeliharaan yang dapat diterapkan oleh peternak dari skala kecil hingga besar. Tujuannya agar setiap peternak mampu meningkatkan efisiensi produksi sambil menjaga kesejahteraan ternak agar hasil yang didapat maksimal, berkelanjutan, dan ramah lingkungan.</p>
+    <p>
+      Keberhasilan dalam beternak sangat bergantung pada penerapan teknik pemeliharaan yang tepat dan menyeluruh. Ini mencakup pemberian pakan yang bergizi dan seimbang, pengelolaan kandang yang bersih serta nyaman untuk ternak, serta penerapan protokol kesehatan yang ketat agar ternak terhindar dari penyakit dan stres. Dalam era teknologi modern, berbagai inovasi mulai diterapkan dalam pemeliharaan, seperti sistem pemberian pakan otomatis yang dapat menghemat tenaga dan meningkatkan efisiensi, sensor biometrik untuk memantau kondisi kesehatan ternak secara real-time, serta vaksinasi canggih yang melindungi ternak dari berbagai penyakit.
+    </p>
+    <p>
+      EduPeternakan berkomitmen memberikan pemahaman mendalam tentang teknik-teknik modern ini melalui artikel dan tutorial yang dapat diakses oleh peternak skala kecil maupun besar. Dengan pengetahuan yang tepat, peternak dapat mengoptimalkan produktivitas ternak sekaligus memastikan kesejahteraan dan kelangsungan hidup ternak dalam jangka panjang.
+    </p>
   </section>
+
   <section id="artikel">
     <h2>Artikel Edukasi</h2>
+
     <article>
       <h3>Tips Sukses Beternak Ayam</h3>
-      <p>Untuk sukses dalam beternak ayam, tidak hanya pengetahuan dasar yang diperlukan, tetapi juga pemahaman mendalam tentang siklus hidup ayam, komposisi pakan, dan pengendalian penyakit. Pastikan kandang memiliki ventilasi yang baik dan selalu bersih. Berikan pakan dengan nutrisi lengkap serta lakukan vaksinasi secara rutin untuk mencegah penyakit. Dengan pengelolaan yang tepat, produksi daging dan telur akan meningkat secara signifikan, mendukung keberlanjutan usaha peternakan ayam Anda.</p>
+      <p>
+        Beternak ayam memerlukan pengetahuan yang mendalam dan manajemen yang teliti agar hasil yang diperoleh maksimal. Penting untuk memperhatikan siklus hidup ayam, mulai dari pemilihan bibit unggul, pemberian pakan bergizi, hingga pengendalian penyakit secara tepat dan teratur. Ventilasi kandang yang baik serta kebersihan lingkungan ternak menjadi faktor penentu utama dalam menjaga kesehatan ayam. Vaksinasi rutin dan pemantauan kondisi ayam secara berkala dapat mencegah wabah penyakit yang dapat merugikan peternak secara finansial. Dengan penerapan teknik yang benar dan konsisten, hasil produksi telur dan daging ayam dapat meningkat signifikan serta berkualitas tinggi.
+      </p>
     </article>
+
     <article>
       <h3>Manfaat Pemberian Pakan Berkualitas</h3>
-      <p>Pakan berkualitas tinggi adalah salah satu faktor utama dalam memastikan pertumbuhan ternak optimal dan hasil produksi yang maksimal. Pakan yang tepat membantu meningkatkan daya tahan tubuh ternak terhadap penyakit, mempercepat laju pertumbuhan, dan menghasilkan produk ternak seperti daging dan susu dengan kualitas unggul. EduPeternakan juga membahas berbagai jenis pakan serta tips memilih dan membuat pakan alternatif yang ekonomis dan ramah lingkungan untuk mendukung usaha peternakan yang berkelanjutan.</p>
+      <p>
+        Pakan merupakan komponen utama yang menentukan keberhasilan pemeliharaan ternak. Pemberian pakan berkualitas tinggi dan seimbang secara nutrisi mampu meningkatkan daya tahan tubuh ternak terhadap penyakit, mempercepat proses pertumbuhan, dan meningkatkan kualitas hasil produksi seperti daging, susu, maupun telur. Selain itu, penggunaan pakan alternatif berbahan lokal yang ekonomis dan ramah lingkungan mulai banyak dikembangkan untuk menekan biaya produksi sekaligus menjaga kelestarian sumber daya alam. EduPeternakan menyajikan informasi lengkap mengenai jenis-jenis pakan terbaik serta cara memilih dan meracik pakan alternatif yang tepat agar peternak dapat meningkatkan efisiensi budidaya secara signifikan.
+      </p>
     </article>
   </section>
-  <section id="kontak">
+
+  <section id="kontak" class="contact-info">
     <h2>Kontak Kami</h2>
-    <p>Jika Anda ingin berkonsultasi atau bertanya lebih lanjut, jangan ragu menghubungi kami melalui WhatsApp di nomor berikut:</p>
-    <p><strong>0822-8018-6368</strong></p>
-    <p>Ikuti kami juga di Instagram: <a href="https://instagram.com/givyooo" target="_blank" rel="noopener">@givyooo</a></p>
+    <p>Untuk konsultasi, pertanyaan, atau kerjasama, jangan ragu menghubungi kami melalui WhatsApp atau Instagram berikut:</p>
+    <p><strong>WhatsApp:</strong> 0822-8018-6368</p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/givyooo" target="_blank" rel="noopener">@givyooo</a></p>
   </section>
 </main>
+
 <footer>
-  &copy; 2025 EduPeternakan. Semua hak cipta dilindungi.<br />
-  Ikuti kami di Instagram: <a href="https://instagram.com/givyooo" target="_blank" rel="noopener">@givyooo</a>
+  <p>© 2025 EduPeternakan. Semua hak cipta dilindungi.</p>
+  <p>Follow kami di Instagram: <a href="https://instagram.com/givyooo" target="_blank" rel="noopener">@givyooo</a></p>
 </footer>
+
 </body>
 </html>
