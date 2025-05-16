@@ -3,287 +3,261 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>EduPeternakan - Portal Edukasi Dunia Peternakan Indonesia</title>
+<title>EduPeternakan - Portal Edukasi Peternakan Indonesia</title>
 <style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
   body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0; padding: 0;
-    background: #fffdfa;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f6f1;
+    color: #4b3b2b;
+    line-height: 1.7;
+  }
+  a {
+    text-decoration: none;
+    color: #4b3b2b;
+  }
+  a:hover {
+    color: #2d6a4f;
   }
   header {
-    background-color: #2f7a2f;
-    color: white;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    background: #7a6853;
+    padding: 30px 20px;
+    text-align: center;
+    color: #f3e9dc;
+    font-family: 'Playfair Display', serif;
   }
   header h1 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 1.5px;
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+  }
+  header p {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+  nav {
+    background: #4b3b2b;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
   }
   nav a {
-    color: white;
-    margin-left: 25px;
     font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 5px;
   }
-  nav a:hover {
-    color: #a9d18e;
+  nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2d6a4f;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
   }
-  .hero {
-    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 50px;
-    color: white;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
-  }
-  .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-  }
-  .hero p {
-    font-size: 1.4rem;
-    max-width: 600px;
+  nav a:hover::after {
+    width: 100%;
   }
   main {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 40px auto;
-    padding: 0 30px;
+    padding: 0 20px;
   }
   section {
     margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
   }
-  section h3 {
-    font-size: 2rem;
-    color: #2f7a2f;
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2d6a4f;
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    border-bottom: 4px solid #a9d18e;
+    border-bottom: 3px solid #7a6853;
     padding-bottom: 10px;
-    font-weight: 700;
   }
-  section p {
+  section p, section ul, section article {
     font-size: 1.15rem;
     margin-bottom: 20px;
     text-align: justify;
+    text-justify: inter-word;
   }
   ul {
     list-style-type: square;
-    padding-left: 20px;
+    margin-left: 20px;
   }
-  ul li {
+  article h3 {
+    font-family: 'Playfair Display', serif;
+    color: #4b3b2b;
+    font-size: 1.6rem;
     margin-bottom: 10px;
   }
-  .btn-primary {
-    display: inline-block;
-    background-color: #2f7a2f;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
+  form label {
     font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1.8px solid #7a6853;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  textarea {
+    resize: vertical;
+  }
+  button {
+    background-color: #4b3b2b;
+    color: #f3e9dc;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  .btn-primary:hover {
-    background-color: #5cab52;
-  }
-  .faq-item {
-    margin-bottom: 20px;
-  }
-  .faq-question {
-    font-weight: 600;
-    cursor: pointer;
-    color: #2f7a2f;
-  }
-  .faq-answer {
-    display: none;
-    margin-top: 8px;
-    padding-left: 15px;
-    border-left: 3px solid #a9d18e;
-  }
-  .testimonials {
-    background-color: #f9f9f9;
-    padding: 30px 20px;
-    border-radius: 8px;
-  }
-  .testimonial {
-    margin-bottom: 25px;
-    font-style: italic;
-    border-left: 4px solid #2f7a2f;
-    padding-left: 15px;
+  button:hover {
+    background-color: #2d6a4f;
   }
   footer {
-    background-color: #2f7a2f;
-    color: white;
+    background-color: #4b3b2b;
+    color: #f3e9dc;
     text-align: center;
-    padding: 20px 30px;
+    padding: 15px 10px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
-  @media(max-width: 768px) {
-    header {
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-    }
-    nav a {
-      margin-left: 0;
-      margin-right: 15px;
-    }
-    .hero {
-      height: 250px;
-      padding-left: 20px;
-      text-align: center;
-      align-items: center;
-    }
-    .hero h2 {
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
       font-size: 2rem;
     }
-    main {
-      padding: 0 15px;
-      margin: 30px auto;
+    nav {
+      flex-direction: column;
+      gap: 15px;
     }
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
   <h1>EduPeternakan</h1>
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#jenis">Jenis Ternak</a>
-    <a href="#teknik">Teknik</a>
-    <a href="#artikel">Artikel</a>
-    <a href="#faq">FAQ</a>
-    <a href="#testimoni">Testimoni</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+  <p>Portal Edukasi Dunia Peternakan Indonesia yang Mendalam dan Profesional</p>
 </header>
-
-<div class="hero">
-  <h2>Belajar Peternakan dengan Mudah dan Lengkap</h2>
-  <p>Portal edukasi terpercaya untuk membantu peternak pemula hingga profesional meningkatkan hasil ternak mereka.</p>
-</div>
-
+<nav>
+  <a href="#tentang">Tentang</a>
+  <a href="#jenis">Jenis Ternak</a>
+  <a href="#teknik">Teknik Pemeliharaan</a>
+  <a href="#artikel">Artikel</a>
+  <a href="#kontak">Kontak</a>
+</nav>
 <main>
   <section id="tentang">
-    <h3>Apa Itu Peternakan?</h3>
-    <p>Peternakan merupakan cabang usaha yang bergerak di bidang pemeliharaan hewan ternak, seperti ayam, sapi, kambing, dan domba. Selain sebagai sumber protein hewani, peternakan juga berperan penting dalam perekonomian nasional dan keberlangsungan pangan masyarakat Indonesia. EduPeternakan hadir untuk memberikan informasi terpercaya dan edukatif tentang dunia peternakan, mulai dari teknik pemeliharaan, pengelolaan kandang, hingga tips sukses usaha peternakan.</p>
+    <h2>Tentang Peternakan</h2>
+    <p>
+      Peternakan merupakan fondasi krusial dalam pembangunan ekonomi dan ketahanan pangan nasional Indonesia. Bidang ini tidak hanya berperan dalam menyediakan sumber protein hewani berkualitas, seperti daging, susu, dan telur, namun juga sebagai pilar utama yang menopang kesejahteraan masyarakat pedesaan dan pertumbuhan industri agro. Dalam praktiknya, peternakan melibatkan interaksi yang kompleks antara aspek biologi, manajemen sumber daya, teknologi pemeliharaan, dan pemasaran hasil ternak. EduPeternakan hadir untuk mengupas tuntas semua dimensi ini dengan pendekatan ilmiah dan praktis, memberikan wawasan yang mendalam serta solusi terbaik bagi para peternak maupun penggiat peternakan modern di seluruh nusantara.
+    </p>
+    <p>
+      Memahami prinsip dasar peternakan adalah kunci untuk menciptakan sistem yang berkelanjutan dan ramah lingkungan. Dengan perkembangan teknologi terbaru, seperti automasi dalam pemberian pakan, manajemen kesehatan ternak berbasis data, dan pengembangan pakan alternatif berbahan lokal, maka potensi peningkatan produktivitas dan efisiensi semakin terbuka lebar. EduPeternakan mengajak Anda untuk menelusuri segala aspek tersebut secara detail, agar dapat mengimplementasikan ilmu peternakan yang tidak hanya efektif, tapi juga berdampak positif secara sosial dan ekologis.
+    </p>
   </section>
-
   <section id="jenis">
-    <h3>Jenis-Jenis Ternak yang Populer di Indonesia</h3>
-    <p>Indonesia memiliki beragam jenis ternak yang umum dipelihara, berikut beberapa di antaranya:</p>
+    <h2>Jenis-Jenis Ternak</h2>
+    <p>
+      Indonesia kaya akan keanekaragaman jenis ternak yang menjadi sumber penghidupan bagi jutaan peternak. Jenis-jenis ternak tersebut memiliki karakteristik, kebutuhan pemeliharaan, dan potensi pasar yang beragam. Berikut ini beberapa jenis ternak unggulan yang umum dipelihara di Indonesia, beserta uraian mendalam mengenai kelebihan dan tantangan masing-masing:
+    </p>
     <ul>
-      <li><strong>Ayam:</strong> Termasuk ayam petelur dan ayam pedaging yang sangat dibutuhkan untuk konsumsi harian.</li>
-      <li><strong>Sapi:</strong> Sumber daging dan susu yang memiliki nilai ekonomi tinggi.</li>
-      <li><strong>Kambing:</strong> Banyak dipelihara untuk daging serta sebagai hewan kurban.</li>
-      <li><strong>Domba:</strong> Ternak dengan nilai ekonomi untuk daging dan wol.</li>
+      <li>
+        <strong>Ayam</strong>: Sebagai salah satu ternak paling populer, ayam unggas menyediakan daging dan telur yang menjadi bagian penting dari pola konsumsi protein masyarakat. Pemeliharaan ayam dapat dilakukan secara tradisional maupun intensif, dengan pengelolaan yang tepat mampu meningkatkan hasil produksi sekaligus menjaga kesehatan ayam dari penyakit.
+      </li>
+      <li>
+        <strong>Sapi</strong>: Sapi potong dan sapi perah memiliki peran strategis dalam industri peternakan Indonesia. Sapi potong menyediakan daging yang bernilai ekonomis tinggi, sementara sapi perah menyediakan susu segar berkualitas. Pemeliharaan sapi memerlukan perhatian khusus terkait nutrisi, kesehatan, dan lingkungan kandang agar produktivitas optimal.
+      </li>
+      <li>
+        <strong>Kambing</strong>: Kambing dikenal dengan kemampuan adaptasinya yang tinggi terhadap berbagai kondisi lingkungan. Kambing juga memiliki nilai ekonomis baik sebagai sumber daging maupun produk sampingan seperti kulit dan susu kambing.
+      </li>
+      <li>
+        <strong>Domba</strong>: Domba lebih dikenal sebagai ternak penghasil daging dan bulu. Teknik pemeliharaan yang tepat akan memastikan kualitas dan kuantitas hasil produksi sesuai dengan standar pasar.
+      </li>
     </ul>
   </section>
-
   <section id="teknik">
-    <h3>Teknik Pemeliharaan Ternak yang Efektif</h3>
-    <p>Untuk menghasilkan ternak yang sehat dan produktif, diperlukan teknik pemeliharaan yang tepat. Berikut beberapa prinsip dasar yang wajib diperhatikan:</p>
-    <ul>
-      <li><strong>Pemberian Pakan Berkualitas:</strong> Pastikan pakan yang diberikan sesuai dengan kebutuhan nutrisi ternak.</li>
-      <li><strong>Perawatan Kandang:</strong> Kandang harus bersih, memiliki ventilasi yang baik, dan terlindungi dari cuaca ekstrem.</li>
-      <li><strong>Pengendalian Penyakit:</strong> Lakukan vaksinasi dan pemeriksaan rutin untuk mencegah penyebaran penyakit.</li>
-      <li><strong>Pengelolaan Lingkungan:</strong> Jaga kebersihan lingkungan sekitar kandang agar ternak merasa nyaman dan stres berkurang.</li>
-    </ul>
+    <h2>Teknik Pemeliharaan</h2>
+    <p>
+      Teknik pemeliharaan ternak adalah elemen kunci yang menentukan keberhasilan dalam beternak. Proses ini mencakup serangkaian praktik yang meliputi pemberian pakan yang seimbang dan bergizi, pengelolaan kandang yang higienis dan nyaman, serta penerapan protokol kesehatan yang ketat untuk mencegah dan mengendalikan penyakit.
+    </p>
+    <p>
+      Dalam era modern, penerapan teknologi seperti sistem pemberian pakan otomatis, pemantauan kesehatan ternak dengan sensor biometrik, dan penggunaan vaksinasi canggih menjadi semakin penting. Hal ini memungkinkan peternak meningkatkan efisiensi produksi sekaligus menjaga kesejahteraan ternak. EduPeternakan menjelaskan secara mendalam teknik-teknik ini dengan pendekatan ilmiah dan praktis, sehingga dapat diterapkan oleh peternak skala kecil maupun besar.
+    </p>
   </section>
-
   <section id="artikel">
-    <h3>Artikel Edukasi Terbaru</h3>
+    <h2>Artikel Edukasi</h2>
     <article>
-      <h4>5 Tips Sukses Beternak Ayam Pedaging</h4>
-      <p>Pelajari teknik pemberian pakan, manajemen kandang, dan cara menghindari penyakit yang umum menyerang ayam pedaging agar hasil panen maksimal.</p>
+      <h3>Tips Sukses Beternak Ayam</h3>
+      <p>
+        Beternak ayam dengan sukses tidak hanya membutuhkan pengetahuan dasar, tetapi juga pemahaman mendalam tentang siklus hidup, pakan, dan pengendalian penyakit. Pastikan kandang memiliki ventilasi yang baik dan kebersihan terjaga, berikan pakan dengan komposisi nutrisi lengkap, dan lakukan vaksinasi secara rutin. Dengan manajemen yang tepat, hasil panen dapat meningkat secara signifikan.
+      </p>
     </article>
     <article>
-      <h4>Pentingnya Pakan Organik dalam Beternak Sapi</h4>
-      <p>Pakan organik dapat meningkatkan kesehatan sapi dan kualitas produksi susu maupun daging yang dihasilkan.</p>
-    </article>
-    <article>
-      <h4>Teknik Pengelolaan Kandang yang Baik</h4>
-      <p>Kandang yang bersih dan terawat adalah kunci untuk mencegah penyakit dan meningkatkan produktivitas ternak Anda.</p>
+      <h3>Manfaat Pemberian Pakan Berkualitas</h3>
+      <p>
+        Pemberian pakan berkualitas tinggi adalah faktor utama untuk pertumbuhan ternak yang optimal dan produktivitas tinggi. Pakan yang baik meningkatkan daya tahan tubuh ternak terhadap penyakit, mempercepat pertumbuhan, dan meningkatkan kualitas hasil produksi seperti daging dan susu. EduPeternakan membahas jenis-jenis pakan serta cara memilih dan membuat pakan alternatif yang ekonomis dan ramah lingkungan.
+      </p>
     </article>
   </section>
-
-  <section id="faq">
-    <h3>FAQ - Pertanyaan yang Sering Diajukan</h3>
-    <div class="faq-item">
-      <p class="faq-question">Bagaimana cara memulai usaha peternakan dengan modal kecil?</p>
-      <p class="faq-answer">Mulailah dengan ternak yang mudah dirawat seperti ayam atau kambing, pelajari teknik pemeliharaan yang benar, dan manfaatkan sumber daya lokal.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-question">Apa pakan terbaik untuk sapi perah?</p>
-      <p class="faq-answer">Pakan berkualitas tinggi dengan kandungan protein dan mineral yang cukup sangat penting untuk sapi perah agar produksi susu maksimal.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-question">Bagaimana cara mencegah penyakit pada ternak?</p>
-      <p class="faq-answer">Lakukan vaksinasi rutin, jaga kebersihan kandang, dan pisahkan ternak yang sakit agar tidak menular ke lainnya.</p>
-    </div>
-  </section>
-
-  <section id="testimoni">
-    <h3>Testimoni Pengguna EduPeternakan</h3>
-    <div class="testimonials">
-      <div class="testimonial">
-        "EduPeternakan membantu saya memahami cara beternak ayam dengan benar. Sekarang hasil ternak saya jauh lebih baik dan sehat." - Sari, Peternak Ayam dari Yogyakarta
-      </div>
-      <div class="testimonial">
-        "Artikel dan panduan di EduPeternakan sangat lengkap dan mudah dipahami. Sangat bermanfaat untuk peternak pemula seperti saya." - Budi, Pemilik Peternakan Kambing di Bandung
-      </div>
-      <div class="testimonial">
-        "Terima kasih EduPeternakan, saya jadi lebih percaya diri menjalankan usaha ternak sapi saya." - Rina, Peternak Sapi di Malang
-      </div>
-    </div>
-  </section>
-
   <section id="kontak">
-    <h3>Hubungi Kami</h3>
-    <p>Jika kamu memiliki pertanyaan atau ingin berkonsultasi, jangan ragu untuk menghubungi kami melalui form berikut atau kirim email ke <a href="mailto:contact@edupeternakan.id">contact@edupeternakan.id</a>.</p>
+    <h2>Kontak Kami</h2>
+    <p>Anda ingin berkonsultasi atau bertanya lebih lanjut? Jangan ragu menghubungi kami melalui WhatsApp:</p>
+    <p style="font-weight:700; font-size:1.3rem; color:#2d6a4f;">0822-8018-6368</p>
     <form>
-      <label for="nama">Nama:</label><br />
-      <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required style="width: 100%; padding: 10px; margin-top: 6px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;" />
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required />
       
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" placeholder="email@contoh.com" required style="width: 100%; padding: 10px; margin-top: 6px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;" />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
       
-      <label for="pesan">Pesan:</label><br />
-      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required style="width: 100%; padding: 10px; margin-top: 6px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;"></textarea><br />
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
       
-      <button type="submit" class="btn-primary">Kirim Pesan</button>
+      <button type="submit">Kirim Pesan</button>
     </form>
   </section>
 </main>
-
 <footer>
-  <p>© 2025 EduPeternakan - Semua hak cipta dilindungi.</p>
+  <p>&copy; 2025 EduPeternakan. Semua hak cipta dilindungi.</p>
 </footer>
-
 <script>
-  // FAQ toggle
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const answer = q.nextElementSibling;
-      if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-      } else {
-        answer.style.display = 'block';
+  // Animasi fade-in saat scroll
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < triggerBottom) {
+        section.classList.add('visible');
       }
     });
   });
 </script>
-
 </body>
 </html>
