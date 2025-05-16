@@ -73,6 +73,10 @@
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease, transform 1s ease;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
   }
   section.visible {
     opacity: 1;
@@ -85,12 +89,14 @@
     margin-bottom: 20px;
     border-bottom: 3px solid #7a6853;
     padding-bottom: 10px;
+    flex-basis: 100%;
   }
   section p, section ul, section article {
     font-size: 1.15rem;
     margin-bottom: 20px;
     text-align: justify;
     text-justify: inter-word;
+    flex: 1 1 60%;
   }
   ul {
     list-style-type: square;
@@ -145,7 +151,38 @@
     width: 100%;
     bottom: 0;
   }
+  /* Image container */
+  .img-cartoon {
+    flex: 1 1 35%;
+    max-width: 300px;
+  }
+  .img-cartoon svg {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  /* Instagram */
+  .ig-handle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d6a4f;
+  }
   /* Responsive */
+  @media (max-width: 800px) {
+    section {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .img-cartoon {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+    section p, section ul, section article {
+      flex-basis: 100%;
+    }
+  }
   @media (max-width: 600px) {
     header h1 {
       font-size: 2rem;
@@ -173,6 +210,22 @@
 <main>
   <section id="tentang">
     <h2>Tentang Peternakan</h2>
+    <div class="img-cartoon" aria-label="Gambar kartun peternak dengan sapi dan ayam">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="200" height="200" fill="#f3e9dc" rx="15" />
+        <!-- Peternak -->
+        <circle cx="60" cy="80" r="20" fill="#f2cfa9" />
+        <rect x="50" y="100" width="20" height="40" fill="#6a4a3c" rx="5"/>
+        <!-- Sapi -->
+        <ellipse cx="140" cy="110" rx="30" ry="20" fill="#6a4a3c" />
+        <circle cx="120" cy="100" r="7" fill="#fff" />
+        <circle cx="120" cy="100" r="3" fill="#000" />
+        <rect x="130" y="115" width="15" height="10" fill="#452c1a" rx="3"/>
+        <!-- Ayam -->
+        <circle cx="160" cy="70" r="10" fill="#f4a261" />
+        <polygon points="165,70 175,75 165,80" fill="#e76f51"/>
+      </svg>
+    </div>
     <p>
       Peternakan merupakan fondasi krusial dalam pembangunan ekonomi dan ketahanan pangan nasional Indonesia. Bidang ini tidak hanya berperan dalam menyediakan sumber protein hewani berkualitas, seperti daging, susu, dan telur, namun juga sebagai pilar utama yang menopang kesejahteraan masyarakat pedesaan dan pertumbuhan industri agro. Dalam praktiknya, peternakan melibatkan interaksi yang kompleks antara aspek biologi, manajemen sumber daya, teknologi pemeliharaan, dan pemasaran hasil ternak. EduPeternakan hadir untuk mengupas tuntas semua dimensi ini dengan pendekatan ilmiah dan praktis, memberikan wawasan yang mendalam serta solusi terbaik bagi para peternak maupun penggiat peternakan modern di seluruh nusantara.
     </p>
@@ -182,6 +235,24 @@
   </section>
   <section id="jenis">
     <h2>Jenis-Jenis Ternak</h2>
+    <div class="img-cartoon" aria-label="Gambar kartun ayam, sapi, kambing, dan domba">
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="200" height="100" fill="#f3e9dc" rx="15" />
+        <!-- Ayam -->
+        <circle cx="30" cy="70" r="12" fill="#f4a261" />
+        <polygon points="35,70 45,75 35,80" fill="#e76f51"/>
+        <!-- Sapi -->
+        <ellipse cx="80" cy="60" rx="20" ry="15" fill="#6a4a3c" />
+        <circle cx="65" cy="55" r="5" fill="#fff" />
+        <circle cx="65" cy="55" r="2" fill="#000" />
+        <!-- Kambing -->
+        <ellipse cx="130" cy="60" rx="17" ry="12" fill="#b5651d" />
+        <polygon points="120,45 115,55 125,55" fill="#4b3b2b"/>
+        <!-- Domba -->
+        <ellipse cx="170" cy="65" rx="15" ry="10" fill="#d9d9d9" />
+        <circle cx="160" cy="60" r="4" fill="#4b3b2b" />
+      </svg>
+    </div>
     <p>
       Indonesia kaya akan keanekaragaman jenis ternak yang menjadi sumber penghidupan bagi jutaan peternak. Jenis-jenis ternak tersebut memiliki karakteristik, kebutuhan pemeliharaan, dan potensi pasar yang beragam. Berikut ini beberapa jenis ternak unggulan yang umum dipelihara di Indonesia, beserta uraian mendalam mengenai kelebihan dan tantangan masing-masing:
     </p>
@@ -202,6 +273,18 @@
   </section>
   <section id="teknik">
     <h2>Teknik Pemeliharaan</h2>
+    <div class="img-cartoon" aria-label="Gambar kartun kandang dengan alat pemberi pakan otomatis">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="200" height="140" fill="#f3e9dc" rx="15" />
+        <!-- Kandang -->
+        <rect x="30" y="50" width="140" height="70" fill="#a27c5a" rx="10" />
+        <rect x="45" y="70" width="30" height="40" fill="#6a4a3c" />
+        <rect x="125" y="70" width="30" height="40" fill="#6a4a3c" />
+        <!-- Alat Pakan Otomatis -->
+        <rect x="90" y="30" width="20" height="20" fill="#2d6a4f" rx="5" />
+        <circle cx="100" cy="40" r="7" fill="#4b3b2b" />
+      </svg>
+    </div>
     <p>
       Teknik pemeliharaan ternak adalah elemen kunci yang menentukan keberhasilan dalam beternak. Proses ini mencakup serangkaian praktik yang meliputi pemberian pakan yang seimbang dan bergizi, pengelolaan kandang yang higienis dan nyaman, serta penerapan protokol kesehatan yang ketat untuk mencegah dan mengendalikan penyakit.
     </p>
@@ -211,53 +294,12 @@
   </section>
   <section id="artikel">
     <h2>Artikel Edukasi</h2>
-    <article>
-      <h3>Tips Sukses Beternak Ayam</h3>
-      <p>
-        Beternak ayam dengan sukses tidak hanya membutuhkan pengetahuan dasar, tetapi juga pemahaman mendalam tentang siklus hidup, pakan, dan pengendalian penyakit. Pastikan kandang memiliki ventilasi yang baik dan kebersihan terjaga, berikan pakan dengan komposisi nutrisi lengkap, dan lakukan vaksinasi secara rutin. Dengan manajemen yang tepat, hasil panen dapat meningkat secara signifikan.
-      </p>
-    </article>
-    <article>
-      <h3>Manfaat Pemberian Pakan Berkualitas</h3>
-      <p>
-        Pemberian pakan berkualitas tinggi adalah faktor utama untuk pertumbuhan ternak yang optimal dan produktivitas tinggi. Pakan yang baik meningkatkan daya tahan tubuh ternak terhadap penyakit, mempercepat pertumbuhan, dan meningkatkan kualitas hasil produksi seperti daging dan susu. EduPeternakan membahas jenis-jenis pakan serta cara memilih dan membuat pakan alternatif yang ekonomis dan ramah lingkungan.
-      </p>
-    </article>
-  </section>
-  <section id="kontak">
-    <h2>Kontak Kami</h2>
-    <p>Anda ingin berkonsultasi atau bertanya lebih lanjut? Jangan ragu menghubungi kami melalui WhatsApp:</p>
-    <p style="font-weight:700; font-size:1.3rem; color:#2d6a4f;">0822-8018-6368</p>
-    <form>
-      <label for="nama">Nama:</label>
-      <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required />
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
-      
-      <label for="pesan">Pesan:</label>
-      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-      
-      <button type="submit">Kirim Pesan</button>
-    </form>
-  </section>
-</main>
-<footer>
-  <p>&copy; 2025 EduPeternakan. Semua hak cipta dilindungi.</p>
-</footer>
-<script>
-  // Animasi fade-in saat scroll
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const triggerBottom = window.innerHeight * 0.85;
-
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < triggerBottom) {
-        section.classList.add('visible');
-      }
-    });
-  });
-</script>
-</body>
-</html>
+    <div class="img-cartoon" aria-label="Gambar kartun buku dan komputer edukasi">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="200" height="140" fill="#f3e9dc" rx="15" />
+        <!-- Buku -->
+        <rect x="30" y="50" width="60" height="60" fill="#7a6853" rx="8" />
+        <line x1="40" y1="70" x2="80" y2="70" stroke="#f3e9dc" stroke-width="4" />
+        <line x1="40" y1="90" x2="80" y2="90" stroke="#f3e9dc" stroke-width="4" />
+        <!-- Komputer -->
+        <rect x="110
